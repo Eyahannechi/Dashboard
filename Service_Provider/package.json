@@ -1,0 +1,6 @@
+{
+  "name": "Service_Provider",
+  "version": "0.0.0",
+  "main": "Service_Provider.js",
+  "private": true
+}

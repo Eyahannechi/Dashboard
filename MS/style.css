@@ -1,0 +1,106 @@
+/* Video Explanation - https://youtu.be/d9AztvTUYxA */
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-switch {
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  background-color: #eee;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  /* demo purpose style */
+  margin-bottom: 50px;
+}
+
+.toggle-switch::before,
+.toggle-switch::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #222;
+}
+
+/* ONE */
+.toggle-switch.one::before,
+.toggle-switch.one::after {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-switch.one::before {
+  left: 5px;
+  background-color: #009e81;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.toggle-switch.one::after {
+  right: 5px;
+}
+
+.toggle-switch.one.active::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.toggle-switch.one.active::after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* TWO */
+
+.toggle-switch.two::after {
+  display: none;
+}
+
+.toggle-switch.two::before {
+  left: 30px;
+  transition: left 0.3s ease, background-color 0.3s ease;
+} 
+
+.toggle-switch.two.active::before {
+  left: 5px;
+  background-color: #009e81;
+} 
+
+/* THREE */
+.toggle-switch.three::before,
+.toggle-switch.three::after {
+  background: none;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.toggle-switch.three::before {
+  content: 'on';
+  left: 5px;
+}
+
+.toggle-switch.three::after {
+  content: 'off';
+  right: 5px;
+}
+
+.toggle-switch.three {
+  transition: background-position 0.3s ease;
+  background: linear-gradient(90deg, #009e81 33.333%, #eee 0, #eee 66.666%, #222 0) 100% 0/150% 100% no-repeat;
+}
+
+.toggle-switch.three.active {
+  background-position: 0 0;
+}

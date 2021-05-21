@@ -1,0 +1,6 @@
+{
+  "name": "company",
+  "version": "0.0.0",
+  "main": "Company.js",
+  "private": true
+}
